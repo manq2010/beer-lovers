@@ -6,6 +6,7 @@ const beerPage = () => {
     <div>
         <Helmet>
             <title>Beer</title>
+            <meta name="description" content="Helmet application" />
         </Helmet>
     
       
