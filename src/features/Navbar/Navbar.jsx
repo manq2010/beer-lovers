@@ -1,12 +1,40 @@
-// import React from 'react';
-// import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import HomeIcon from '@mui/icons-material/Home';
+import { toggleNavMenu } from '../../redux/BeerSlice/beerSlice';
+import headerData from '../../data/headerData';
 
-// const Navbar = () => {
-//   return (
-//     <div>
+const Navbar = () => {
+  // Prepare Redux dispatch method:
+  const dispatch = useDispatch();
 
-//     </div>
-//   )
-// }
+  const shortName = (name) => {
+    if (name.length > 12) {
+      return name.split(' ')[0];
+    }
+    return name;
+  };
+  return (
+    <nav>
+      <ul>
+        <h1>
+          {shortName(headerData.title)}
+        </h1>
+        <li>
+          <NavLink
+            exact
+            activeClassName="active"
+            to="/"
+            onClick={() => dispatch(toggleNavMenu())}
+          >
+            <HomeIcon />
+          </NavLink>
+        </li>
+      </ul>
 
-// export default Navbar;
+    </nav>
+  );
+};
+
+export default Navbar;

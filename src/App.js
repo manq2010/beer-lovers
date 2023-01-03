@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import NotFoundPage from './pages/NotFound/NotFoundPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
             path="/"
           // element={<MainPage />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </div>

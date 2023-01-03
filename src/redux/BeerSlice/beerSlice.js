@@ -8,25 +8,26 @@ const initialState = {
   isLoading: true,
   status: 'idle',
   error: '',
+  showNavMenu: false,
 };
 
 export const fetchBeers = createAsyncThunk(
   'beers/fetchBeers',
   async () => {
-    const response = await axios.get('/beers');
-    // const beersArray = Object.keys(response).map((key) => ({
-    //   mission_id: key,
+    const response = await axios.get('/beers/1');
+    // const beersArray = Object.keys(response.data).map((key) => ({
+    //   id: key,
     //   ...response.data[key],
     // }));
 
-    // const beers = beersArray.map((beer) => ({
+    // const beers = beersArray.slice().map((beer) => ({
     //   reserved: false,
     //   toogleShow: true,
     //   beer_id: beer.id,
     //   beer_name: beer.name,
     // }));
 
-    console.log('respose', response.data.data[0]);
+    console.log('respose', response);
     return response;
   },
 );
@@ -49,6 +50,9 @@ const beerSlice = createSlice({
       state.beers = state.beers.map((beer) => (beer.id !== action.payload
         ? beer : { ...beer, toogleShow: !beer.toogleShow }));
     },
+    toggleNavMenu: (state) => {
+      state.showNavMenu = !state.showNavMenu;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -58,7 +62,7 @@ const beerSlice = createSlice({
       })
       .addCase(fetchBeers.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.missions = action.payload;
+        state.beers = action.payload;
         state.status = 'succeeded';
       })
       .addCase(fetchBeers.rejected, (state, action) => {
@@ -69,6 +73,6 @@ const beerSlice = createSlice({
   },
 });
 
-export const { setBeers } = beerSlice.actions;
+export const { setBeers, toggleNavMenu } = beerSlice.actions;
 
 export default beerSlice.reducer;
