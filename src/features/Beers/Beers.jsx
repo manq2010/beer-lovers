@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
 import SingleBeer from './SingleBeer/SingleBeer';
 
@@ -27,19 +28,37 @@ const Beers = () => {
       <div>
         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search beer name..." />
       </div>
-      <div>
-        {
+
+      {
             filteredBeers.length ? (
-              <Grid container direction="row" alignItems="center" justifyContent="center">
+              <Grid
+                padding="1rem"
+                marginTop="2rem"
+                gap="2rem"
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
                 {filteredBeers.map((beer) => (
-                  <SingleBeer key={beer.id} beer={beer} />
+                  <SingleBeer key={uuidv4()} beer={beer} />
+                  // <div key={beer.id}>
+                  //   <p>{beer.beer_name}</p>
+                  //   <p>{beer.beer_tagline}</p>
+                  //   <p>{beer.beer_description}</p>
+                  //   <p>{beer.beer_alcohol_volume}</p>
+                  //   <p>{beer.beer_ph}</p>
+                  //   <p>{beer.beer_food_pairing}</p>
+                  //   <p>{beer.beer_brewers_tips}</p>
+                  //   <p>{beer.beer_tip_contributer}</p>
+                  // </div>
                 ))}
               </Grid>
             ) : (
               <h3>No beers found</h3>
             )
         }
-      </div>
+
       {/* {beers.map((beer) => (
         <div key={beer.id}>
           <p>{beer.beer_name}</p>

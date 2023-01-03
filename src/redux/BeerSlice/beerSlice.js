@@ -23,6 +23,7 @@ export const fetchBeers = createAsyncThunk(
     const beers = beersArray.slice().map((beer) => ({
       beer_id: beer.id,
       beer_name: beer.name,
+      beer_first_brewed: beer.first_brewed,
       beer_tagline: beer.tagline,
       beer_description: beer.description,
       beer_image: beer.image_url,
