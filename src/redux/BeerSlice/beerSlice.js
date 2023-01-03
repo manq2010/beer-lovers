@@ -27,7 +27,7 @@ export const fetchBeers = createAsyncThunk(
     //   beer_name: beer.name,
     // }));
 
-    console.log('respose', response);
+    // console.log('respose', response);
     return response;
   },
 );
