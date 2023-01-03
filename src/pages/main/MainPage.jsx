@@ -17,7 +17,6 @@ const MainPage = () => (
     </Helmet>
     <Navbar />
     <Beers />
-
     <Footer />
 
   </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import headerData from '../../data/headerData';
+// import SingleBeer from '../../features/Beers/SingleBeer/SingleBeer';
 
-const beerPage = () => (
+const BeerPage = () => (
   <div>
     <Helmet>
       <title>
@@ -16,4 +17,4 @@ const beerPage = () => (
   </div>
 );
 
-export default beerPage;
+export default BeerPage;

@@ -47,7 +47,10 @@ const Beers = () => {
                 alignItems="center"
               >
                 {filteredBeers.map((beer) => (
-                  <SingleBeer key={uuidv4()} beer={beer} />
+                  <SingleBeer
+                    key={uuidv4()}
+                    beer={beer}
+                  />
                 ))}
               </Grid>
             ) : (
