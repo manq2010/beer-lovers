@@ -1,16 +1,16 @@
-import React from 'react'
-import {Helmet} from "react-helmet";
+// import React from 'react'
+// import {Helmet} from "react-helmet";
 
-const mainPage = () => {
-  return (
-    <div>
-        <Helmet>
-                <title>My Title</title>
-                <meta name="description" content="Helmet application" />
-        </Helmet>
-      
-    </div>
-  )
-}
+// const mainPage = () => {
+//   return (
+//     <div>
+//         <Helmet>
+//                 <title>My Title</title>
+//                 <meta name="description" content="Helmet application" />
+//         </Helmet>
 
-export default mainPage
+//     </div>
+//   )
+// }
+
+// export default mainPage;

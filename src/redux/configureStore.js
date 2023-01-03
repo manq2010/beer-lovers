@@ -1,7 +1,7 @@
 // Import configureStore() from Redux toolkit:
 import { configureStore } from '@reduxjs/toolkit';
 // import reducers
-import beerReducer from './BeerSclice/beerSlice';
+import beerReducer from './BeerSlice/beerSlice';
 // Create Redux store:
 const store = configureStore({
   reducer: {
@@ -9,4 +9,5 @@ const store = configureStore({
     beerReducer,
   },
 });
+
 export default store;
