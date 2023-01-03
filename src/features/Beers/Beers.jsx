@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import SingleBeer from './SingleBeer/SingleBeer';
 
 const Beers = () => {
@@ -30,6 +31,9 @@ const Beers = () => {
           placeholder="Search beer name..."
         />
       </div>
+      <button type="button">
+        <NavLink to="/beer">To beer</NavLink>
+      </button>
 
       { isLoading ? (
         <h3>Loading...</h3>
