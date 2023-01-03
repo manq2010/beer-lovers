@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from '../../features/Navbar/Navbar';
 import headerData from '../../data/headerData';
 import Footer from '../../features/Footer/Footer';
+import Beers from '../../features/Beers/Beers';
 
 const MainPage = () => (
   <div>
@@ -12,9 +13,10 @@ const MainPage = () => (
         {' '}
         | Beer Lovers Application
       </title>
-      <meta name="description" content="beer lovers application" />
+      <meta name="description" content="Beer lovers application" />
     </Helmet>
     <Navbar />
+    <Beers />
 
     <Footer />
 

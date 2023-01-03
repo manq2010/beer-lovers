@@ -8,27 +8,33 @@ const initialState = {
   isLoading: true,
   status: 'idle',
   error: '',
-  showNavMenu: false,
+  showNavMenu: true,
 };
 
 export const fetchBeers = createAsyncThunk(
   'beers/fetchBeers',
   async () => {
-    const response = await axios.get('/beers/1');
-    // const beersArray = Object.keys(response.data).map((key) => ({
-    //   id: key,
-    //   ...response.data[key],
-    // }));
+    const response = await axios.get('/beers');
+    const beersArray = Object.keys(response.data).map((key) => ({
+      id: key,
+      ...response.data[key],
+    }));
 
-    // const beers = beersArray.slice().map((beer) => ({
-    //   reserved: false,
-    //   toogleShow: true,
-    //   beer_id: beer.id,
-    //   beer_name: beer.name,
-    // }));
-
-    // console.log('respose', response);
-    return response;
+    const beers = beersArray.slice().map((beer) => ({
+      beer_id: beer.id,
+      beer_name: beer.name,
+      beer_tagline: beer.tagline,
+      beer_description: beer.description,
+      beer_image: beer.image_url,
+      beer_alcohol_volume: beer.abv,
+      beer_ph: beer.ph,
+      beer_ingredient: beer.ingredients,
+      beer_method: beer.method,
+      beer_food_pairing: beer.food_pairing,
+      beer_brewers_tips: beer.brewers_tips,
+      beer_tip_contributer: beer.contributed_by,
+    }));
+    return beers;
   },
 );
 

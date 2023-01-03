@@ -1,17 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import headerData from '../../data/headerData';
 
-const beerPage = () => {
-  return (
-    <div>
-        <Helmet>
-            <title>Beer</title>
-            <meta name="description" content="Helmet application" />
-        </Helmet>
-    
-      
-    </div>
-  )
-}
+const beerPage = () => (
+  <div>
+    <Helmet>
+      <title>
+        {headerData.name}
+        Beer
+      </title>
+      <meta name="description" content="Beer lovers application" />
+    </Helmet>
+    <h1>Beer</h1>
+
+  </div>
+);
 
 export default beerPage;

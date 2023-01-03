@@ -16,6 +16,9 @@ const Navbar = () => {
 
   console.log(showNavMenu);
 
+  const path = window.location.pathname;
+  console.log(path);
+
   const shortName = (name) => {
     if (name.length > 12) {
       return name.split(' ')[0];
@@ -29,7 +32,7 @@ const Navbar = () => {
               <ul>
                 <li>
                   <NavLink
-                    to="/"
+                    to="/test"
                   >
                     <h1>
                       <SportsBarIcon />
