@@ -2,22 +2,15 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
-import { NavLink } from 'react-router-dom';
 import SingleBeer from './SingleBeer/SingleBeer';
 
 const Beers = () => {
   const states = useSelector((state) => state.beerReducer);
   const { beers, isLoading } = states;
-  //   useEffect(() => {
-  //     if (missionsStatus === 'idle') {
-  //       dispatch(fetchMissions());
-  //     }
-  //   }, [missionsStatus, dispatch]);
-
   const [search, setSearch] = useState('');
 
   const filteredBeers = beers.filter((beer) => {
-    const content = beer.beer_name;
+    const content = beer.beer_name + beer.beer_description;
     return content.toLowerCase().includes(search.toLowerCase());
   });
 
@@ -31,9 +24,6 @@ const Beers = () => {
           placeholder="Search beer name..."
         />
       </div>
-      <button type="button">
-        <NavLink to="/beer">To beer</NavLink>
-      </button>
 
       { isLoading ? (
         <h3>Loading...</h3>
