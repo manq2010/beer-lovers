@@ -46,7 +46,8 @@ const SingleBeer = ({ beer }) => {
           // width: '80%',
           // height: 350,
           // flexGrow: 1,
-          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#cbddf2' : '#1E81'),
+          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#cbddf2' : '#35558b'),
+          color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff'),
         }}
       >
         <div>
@@ -70,7 +71,6 @@ const SingleBeer = ({ beer }) => {
 
           <div style={{
             display: 'flex',
-            border: 'solid 1px gray',
             borderRadius: '5px',
             justifyContent: 'space-between',
             padding: '0.5rem',
@@ -78,7 +78,7 @@ const SingleBeer = ({ beer }) => {
             minWidth: '200px',
             margin: 'auto',
             backgroundColor: 'rgba(245, 245, 245)',
-            opacity: '1',
+            color: '#35558b',
           }}
           >
             <div>
@@ -128,7 +128,7 @@ const SingleBeer = ({ beer }) => {
               paddingTop: '0',
               marginTop: '1rem',
               marginBottom: '-1rem',
-              borderTop: '1px solid gray',
+              borderTop: '1px solid #fff',
             }}
             >
               <h3>Food Pairing</h3>
@@ -178,7 +178,7 @@ const SingleBeer = ({ beer }) => {
                 padding: '0.5rem',
                 paddingTop: '0',
                 marginTop: '0.5rem',
-                borderTop: '1px solid gray',
+                borderTop: '1px solid #fff',
               }}
             >
               <h3>Brewers Tips</h3>

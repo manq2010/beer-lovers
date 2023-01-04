@@ -55,3 +55,23 @@ input::placeholder {
     transform: rotate(360deg);
   }
 }
+
+.icons {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+
+  .search-button {
+    border: none !important;
+  }
+}

@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import SearchIcon from '@mui/icons-material/Search';
+import MicIcon from '@mui/icons-material/Mic';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import SettingsIcon from '@mui/icons-material/Settings';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 // import FilterAltIcon from '@mui/icons-material/FilterAlt';
 // import HomeIcon from '@mui/icons-material/Home';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
@@ -48,11 +52,19 @@ const Navbar = () => {
               }}
             >
               <SportsBarIcon />
-              {shortName(headerData.title)}
+              <span className="logo">
+                {shortName(headerData.title)}
+              </span>
             </h1>
           </NavLink>
         </li>
-        {
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        >
+          {
           showSearchInput ? (
             <div>
               <li>
@@ -74,18 +86,34 @@ const Navbar = () => {
                   onClick={() => {
                     dispatch(toggleShowSearchInput(false));
                   }}
+                  className="search-button"
                 >
                   <SearchIcon />
                   {' '}
-                  Search...
+                  <span className="logo">
+                    Search...
+                  </span>
                 </button>
+
               </li>
             </div>
           ) : (
             null
           )
         }
-
+          <li
+            className="icons"
+            style={{
+              marginRight: '1rem',
+              marginLeft: '-2.5rem',
+            }}
+          >
+            <MicIcon style={{ marginRight: '0.5rem' }} />
+            <PowerSettingsNewIcon style={{ marginRight: '0.5rem' }} />
+            <SettingsIcon style={{ marginRight: '0.5rem' }} />
+            <MoreVertIcon style={{ marginRight: '0.5rem' }} />
+          </li>
+        </div>
       </ul>
 
       {/* <ul>
