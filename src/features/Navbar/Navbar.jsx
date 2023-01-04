@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import SearchIcon from '@mui/icons-material/Search';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+// import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import HomeIcon from '@mui/icons-material/Home';
 import { toggleNavMenu } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
@@ -27,35 +27,64 @@ const Navbar = () => {
   };
   return (
     <nav>
-      {
-            showNavMenu ? (
-              <ul>
-                <li>
-                  <NavLink
-                    to="/test"
-                  >
-                    <h1>
-                      <SportsBarIcon />
-                      {shortName(headerData.title)}
-                    </h1>
-                  </NavLink>
-                </li>
-                <div>
-                  <li>
-                    <button type="button">
-
-                      <SearchIcon />
-                      {' '}
-                      Search...
-                    </button>
-                  </li>
-                  <li>
+      <ul style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+      >
+        <li>
+          <NavLink
+            to="/"
+            style={{
+              textDecoration: 'none',
+              color: '#585e63',
+              opacity: '0.9',
+            }}
+          >
+            <h1
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                gap: '0.5rem',
+              }}
+            >
+              <SportsBarIcon />
+              {shortName(headerData.title)}
+            </h1>
+          </NavLink>
+        </li>
+        <div>
+          <li>
+            <button
+              type="button"
+              style={{
+                border: '1px solid #585e63',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginRight: '2rem',
+                color: '#585e63',
+                backgroundColor: 'transparent',
+                borderRadius: '5px',
+                gap: '0.5rem',
+                paddingRight: '1rem',
+                cursor: 'pointer',
+              }}
+            >
+              <SearchIcon />
+              {' '}
+              Search...
+            </button>
+          </li>
+          {/* <li>
                     <FilterAltIcon />
-                  </li>
-                </div>
-              </ul>
-            ) : (
-              <ul>
+                  </li> */}
+        </div>
+      </ul>
+
+      {/* <ul>
                 <li>
                   <NavLink
                     to="/"
@@ -69,9 +98,8 @@ const Navbar = () => {
                     </button>
                   </NavLink>
                 </li>
-              </ul>
-            )
-        }
+              </ul> */}
+
     </nav>
   );
 };

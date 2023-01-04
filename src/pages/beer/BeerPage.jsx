@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { NavLink, useLocation } from 'react-router-dom';
 import headerData from '../../data/headerData';
 import SingleBeer from '../../features/Beers/SingleBeer/SingleBeer';
+import Footer from '../../features/Footer/Footer';
 
 const BeerPage = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const BeerPage = () => {
           beer={stateData.beer}
         />
       </div>
+      <Footer />
     </>
   );
 };

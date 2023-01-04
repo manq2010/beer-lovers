@@ -30,7 +30,6 @@ const SingleBeer = ({ beer }) => {
     return (
       <Paper
         sx={{
-          cursor: 'pointer',
           p: 2,
           m: '10%',
           marginTop: '1rem',
@@ -38,18 +37,24 @@ const SingleBeer = ({ beer }) => {
           // width: '80%',
           // height: 350,
           // flexGrow: 1,
-          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#1E81'),
+          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#cbddf2' : '#1E81'),
         }}
       >
         <div>
-          <img src={beer.beer_image} alt={beer.beer_name} style={{ height: '350px' }} />
+          <img
+            src={beer.beer_image}
+            alt={beer.beer_name}
+            style={{
+              height: '350px',
+            }}
+          />
         </div>
         <div>
           <h2>{beer.beer_name}</h2>
         </div>
 
         <div>
-          <h1>{beer.beer_tagline}</h1>
+          <h1 style={{ textTransform: 'uppercase' }}>{beer.beer_tagline}</h1>
           <div>
             <p>{beer.beer_description}</p>
           </div>
@@ -63,6 +68,8 @@ const SingleBeer = ({ beer }) => {
             maxWidth: '400px',
             minWidth: '200px',
             margin: 'auto',
+            backgroundColor: 'rgba(245, 245, 245)',
+            opacity: '1',
           }}
           >
             <div>
@@ -118,9 +125,15 @@ const SingleBeer = ({ beer }) => {
               <h3>Food Pairing</h3>
               {
                 showMoreFood ? (
-                  <AddIcon onClick={handleShowMoreFood} />
+                  <AddIcon
+                    onClick={handleShowMoreFood}
+                    style={{ cursor: 'pointer' }}
+                  />
                 ) : (
-                  <RemoveIcon onClick={handleShowMoreFood} />
+                  <RemoveIcon
+                    onClick={handleShowMoreFood}
+                    style={{ cursor: 'pointer' }}
+                  />
                 )
               }
             </div>
@@ -162,9 +175,15 @@ const SingleBeer = ({ beer }) => {
               <h3>Brewers Tips</h3>
               {
                 showMoreTip ? (
-                  <AddIcon onClick={handleShowMoreTip} />
+                  <AddIcon
+                    onClick={handleShowMoreTip}
+                    style={{ cursor: 'pointer' }}
+                  />
                 ) : (
-                  <RemoveIcon onClick={handleShowMoreTip} />
+                  <RemoveIcon
+                    onClick={handleShowMoreTip}
+                    style={{ cursor: 'pointer' }}
+                  />
                 )
               }
             </div>
@@ -190,7 +209,9 @@ const SingleBeer = ({ beer }) => {
                     </li>
                     <li style={{
                       fontWeight: '100',
-                    }}>
+                      marginTop: '0.5rem',
+                    }}
+                    >
                       {beer.beer_tip_contributer}
                     </li>
                   </ul>
