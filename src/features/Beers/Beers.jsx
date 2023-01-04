@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
 import SingleBeer from './SingleBeer/SingleBeer';
+// import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 
 const Beers = () => {
   const states = useSelector((state) => state.beerReducer);
-  const { beers, isLoading } = states;
+  const { beers, isLoading, showSearchInput } = states;
   const [search, setSearch] = useState('');
 
   const filteredBeers = beers.filter((beer) => {
@@ -14,16 +15,30 @@ const Beers = () => {
     return content.toLowerCase().includes(search.toLowerCase());
   });
 
+  // Prepare Redux dispatch method:
+  // const dispatch = useDispatch();
+
   return (
     <div>
-      <div>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search beer name..."
-        />
-      </div>
+      {
+        showSearchInput ? (null) : (
+          <div>
+            <input
+              style={{
+                border: '1px solid #fff',
+                borderRadius: '5px',
+                padding: '10px',
+                textAlign: 'start',
+                fontSize: '1rem',
+              }}
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search beer by name..."
+            />
+          </div>
+        )
+      }
 
       { isLoading ? (
         <h3>Loading...</h3>
@@ -48,7 +63,19 @@ const Beers = () => {
                 ))}
               </Grid>
             ) : (
-              <h3>No beers found</h3>
+              <div style={{
+                height: '60vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              >
+                <h3>
+                  <em>Opps</em>
+                  {' '}
+                  No beer match found!
+                </h3>
+              </div>
             )
         }
         </div>

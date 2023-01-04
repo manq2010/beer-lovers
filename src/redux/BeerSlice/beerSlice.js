@@ -8,7 +8,7 @@ const initialState = {
   isLoading: true,
   status: 'idle',
   error: '',
-  showNavMenu: true,
+  showSearchInput: true,
 };
 
 export const fetchBeers = createAsyncThunk(
@@ -57,8 +57,8 @@ const beerSlice = createSlice({
       state.beers = state.beers.map((beer) => (beer.id !== action.payload
         ? beer : { ...beer, toogleShow: !beer.toogleShow }));
     },
-    toggleNavMenu: (state) => {
-      state.showNavMenu = !state.showNavMenu;
+    toggleShowSearchInput: (state, action) => {
+      state.showSearchInput = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -80,6 +80,6 @@ const beerSlice = createSlice({
   },
 });
 
-export const { setBeers, toggleNavMenu } = beerSlice.actions;
+export const { setBeers, toggleShowSearchInput } = beerSlice.actions;
 
 export default beerSlice.reducer;

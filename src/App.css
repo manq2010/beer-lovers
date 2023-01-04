@@ -1,5 +1,23 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  /* background-color: rgb(67, 106, 179); */
+  background-color: #436ab3;
+
+  /* background-color: rgb(89, 139, 232); */
+
+  /* background-color: rgb(53, 84, 139); */
+  color: #fff;
+}
+
 .App {
   text-align: center;
+}
+
+input::placeholder {
+  color: #436ab3;
 }
 
 .App-logo {

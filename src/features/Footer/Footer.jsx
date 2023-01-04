@@ -1,10 +1,21 @@
 import React from 'react';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Footer = () => (
   <div>
-
     <div>
-      <p>Created by Mancoba Sihlongonyane</p>
+      <p>
+        Created with
+        {' '}
+        <FavoriteIcon style={{
+          display: 'inline-block',
+          color: 'red',
+          height: '1rem',
+        }}
+        />
+        {' '}
+        by Mancoba Sihlongonyane
+      </p>
     </div>
     <div>
       <p>

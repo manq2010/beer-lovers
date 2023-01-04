@@ -1,15 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import headerData from '../../data/headerData';
 import SingleBeer from '../../features/Beers/SingleBeer/SingleBeer';
 import Footer from '../../features/Footer/Footer';
+import Navbar from '../../features/Navbar/Navbar';
 
 const BeerPage = () => {
   const location = useLocation();
   const { stateData } = location.state;
-
-  console.log(stateData.beer);
 
   return (
     <>
@@ -20,11 +19,13 @@ const BeerPage = () => {
         </title>
         <meta name="description" content="Beer lovers application" />
       </Helmet>
-      <h1>Beer</h1>
+
+      {/* <h1>Beer</h1>
       <button type="button">
         <NavLink to="/">To home</NavLink>
-      </button>
+      </button> */}
 
+      <Navbar />
       <div>
         <SingleBeer
           key={stateData.beer.id}

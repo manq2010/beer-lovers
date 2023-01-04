@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
@@ -7,8 +8,13 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Paper from '@mui/material/Paper';
+import { toggleShowSearchInput } from '../../../redux/BeerSlice/beerSlice';
 
 const SingleBeer = ({ beer }) => {
+  const dispatch = useDispatch();
+
+  // const { showSearchInput } = useSelector((state) => state.beerReducer);
+
   const [showMoreFood, SetShowMoreFood] = useState(true);
   const [showMoreTip, SetShowMoreTip] = useState(true);
 
@@ -20,6 +26,7 @@ const SingleBeer = ({ beer }) => {
   };
 
   const navigate = useNavigate();
+  // dispatch(toggleShowSearchInput(false));
   const handleClick = () => {
     navigate('/beer', { state: { stateData: { beer } } });
   };
@@ -27,6 +34,8 @@ const SingleBeer = ({ beer }) => {
   const path = window.location.pathname;
 
   if (path === '/beer') {
+    // console.log(showSearchInput);
+    dispatch(toggleShowSearchInput(false));
     return (
       <Paper
         sx={{
@@ -243,7 +252,8 @@ const SingleBeer = ({ beer }) => {
           width: 150,
           height: 350,
           // flexGrow: 1,
-          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#1E81'),
+          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#35558b'),
+          color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff'),
         }}
       >
         <Grid
