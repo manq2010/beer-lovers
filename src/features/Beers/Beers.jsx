@@ -64,22 +64,39 @@ const Beers = () => {
         <div>
           {
             searchedBeers.length ? (
-              <Grid
-                padding="1rem"
-                marginTop="2rem"
-                gap="2rem"
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-              >
-                {searchedBeers.map((beer) => (
-                  <SingleBeer
-                    key={uuidv4()}
-                    beer={beer}
-                  />
-                ))}
-              </Grid>
+              <div>
+                <div className="center">
+                  <p>
+                    Showing
+                    {' '}
+                    <b>
+                      {searchedBeers.length}
+                    </b>
+                    {' '}
+                    of
+                    {' '}
+                    {beers.length}
+                    {' '}
+                    beers
+                  </p>
+                </div>
+                <Grid
+                  padding="1rem"
+                  marginTop="2rem"
+                  gap="2rem"
+                  container
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  {searchedBeers.map((beer) => (
+                    <SingleBeer
+                      key={uuidv4()}
+                      beer={beer}
+                    />
+                  ))}
+                </Grid>
+              </div>
             ) : (
               <div style={{
                 height: '60vh',

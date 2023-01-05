@@ -3,7 +3,8 @@
   background-color: var(--card-bg);
   height: 100%;
   border-radius: 8px;
-  box-shadow: 2px 2px 20px;
+
+  /* box-shadow: 2px 2px 20px; */
 }
 
 .grid-beer {
@@ -11,34 +12,36 @@
   background-color: var(--card-bg);
   height: 100%;
   border-radius: 8px;
-  box-shadow: 2px 2px 20px;
+
+  /* box-shadow: 2px 2px 20px; */
 }
 
 .grid-beer:hover {
-  box-shadow: none;
+  /* box-shadow: none; */
+  box-shadow: 2px 2px 20px;
 }
 
 .beerItem {
   color: var(--card-bg);
 }
 
-.beer-animation {
+/* .beer-animation {
   position: relative;
   animation: beer 6s infinite;
   animation-direction: alternate-reverse;
-}
+} */
 
-@keyframes beer {
+/* @keyframes beer {
   0% {
     left: 0;
     top: 0;
   }
 
   100% {
-    left: calc(100vw - 200px);
+    left: calc(100vw - 220px);
     top: 0;
   }
-}
+} */
 
 .center {
   display: flex;

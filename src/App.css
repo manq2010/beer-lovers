@@ -83,6 +83,25 @@ a:hover {
   display: block;
 }
 
+.btn-scroll {
+  color: var(--color);
+}
+
+.btn-scroll:hover {
+  font-size: 2.7rem;
+  color: var(--hover);
+}
+
+.theme-btn {
+  color: var(--theme-btn);
+}
+
+.header-beer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 600px) {
   .icons {
     display: none;
@@ -97,19 +116,8 @@ a:hover {
   .search-button {
     border: none !important;
   }
-}
 
-.btn-scroll {
-  color: var(--color);
-}
-
-.btn-scroll:hover {
-  font-size: 2.7rem;
-  color: var(--hover);
-}
-
-.theme-btn {
-  color: var(--theme-btn);
-  /* outline: none; */
-  /* background-color: transparent; */
+  /* .header-beer {
+    display: none;
+  } */
 }
