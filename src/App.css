@@ -15,6 +15,7 @@
   --card-bg: #35558b;
   --color: #fff;
   --hover: #4c4f4c;
+  --theme-btn: #ff5192;
 }
 
 .pink {
@@ -22,6 +23,7 @@
   --card-bg: #ba486e;
   --color: #fff;
   --hover: #3a264a;
+  --theme-btn: #436ab3;
 }
 
 input::placeholder {
@@ -104,4 +106,10 @@ a:hover {
 .btn-scroll:hover {
   font-size: 2.7rem;
   color: var(--hover);
+}
+
+.theme-btn {
+  color: var(--theme-btn);
+  /* outline: none; */
+  /* background-color: transparent; */
 }

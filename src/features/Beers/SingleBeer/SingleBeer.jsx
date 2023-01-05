@@ -192,7 +192,6 @@ const SingleBeer = ({ beer }) => {
                     key={uuidv4()}
                   >
                     {food}
-
                   </li>
                 ))
               }
@@ -292,14 +291,13 @@ const SingleBeer = ({ beer }) => {
           {
             '&:hover': {
               fontWeight: 'bold',
-              fontSize: 15,
             },
           },
           ]
 }
       >
         <Grid
-          className="grid"
+          className="grid-beer"
           justifyContent="center"
           alignItems="center"
           item

@@ -6,6 +6,18 @@
   box-shadow: 2px 2px 20px;
 }
 
+.grid-beer {
+  color: var(--color);
+  background-color: var(--card-bg);
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px;
+}
+
+.grid-beer:hover {
+  box-shadow: none;
+}
+
 .beerItem {
   color: var(--card-bg);
 }
@@ -23,7 +35,7 @@
   }
 
   100% {
-    left: calc(100vw - 150px);
+    left: calc(100vw - 200px);
     top: 0;
   }
 }
