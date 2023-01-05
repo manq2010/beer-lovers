@@ -14,8 +14,6 @@ import './SingleBeer.css';
 const SingleBeer = ({ beer }) => {
   const dispatch = useDispatch();
 
-  // const { showSearchInput } = useSelector((state) => state.beerReducer);
-
   const [showMoreFood, SetShowMoreFood] = useState(true);
   const [showMoreTip, SetShowMoreTip] = useState(true);
 
@@ -27,15 +25,12 @@ const SingleBeer = ({ beer }) => {
   };
 
   const navigate = useNavigate();
-  // dispatch(toggleShowSearchInput(false));
   const handleClick = () => {
     navigate('/beer', { state: { stateData: { beer } } });
   };
 
   const path = window.location.pathname;
-
   if (path === '/beer') {
-    // console.log(showSearchInput);
     dispatch(toggleShowSearchInput(false));
     return (
       <Paper
@@ -45,8 +40,6 @@ const SingleBeer = ({ beer }) => {
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: '10px',
-          // boxShadow: 1,
-
           display: 'inline',
           fontWeight: 'bold',
           mx: 0.5,
@@ -83,7 +76,6 @@ const SingleBeer = ({ beer }) => {
               flexDirection: 'column',
               gap: '1rem',
               justifyContent: 'center',
-              // alignItems: 'center',
             }}
           >
             <div
@@ -111,7 +103,6 @@ const SingleBeer = ({ beer }) => {
                   minWidth: '200px',
                   margin: 'auto',
                   backgroundColor: '#fffafa',
-                // color: '#35558b',
                 }}
               >
                 <div>
@@ -290,8 +281,6 @@ const SingleBeer = ({ beer }) => {
         sx={
           [{
             cursor: 'pointer',
-            // p: 2,
-            // m: 2,
             margin: 'auto',
             justifyContent: 'center',
             borderRadius: '10px',
@@ -389,16 +378,3 @@ export default SingleBeer;
 SingleBeer.propTypes = {
   beer: PropTypes.node.isRequired,
 };
-
-// beer_id: beer.id,
-// beer_name: beer.name,
-// beer_tagline: beer.tagline,
-// beer_description: beer.description,
-// beer_image: beer.image_url,
-// beer_alcohol_volume: beer.abv,
-// beer_ph: beer.ph,
-// beer_ingredient: beer.ingredients,
-// beer_method: beer.method,
-// beer_food_pairing: beer.food_pairing,
-// beer_brewers_tips: beer.brewers_tips,
-// beer_tip_contributer: beer.contributed_by,

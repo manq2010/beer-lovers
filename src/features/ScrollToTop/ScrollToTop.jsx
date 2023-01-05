@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 const ScrollToTop = () => {
@@ -29,12 +28,13 @@ const ScrollToTop = () => {
         display: visible ? 'inline' : 'none',
         position: 'fixed',
         right: '1rem',
-        bottom: '3rem',
+        bottom: '3.5rem',
         height: '3rem',
         zIndex: '10',
       }}
     >
       <button
+        className="btn-scroll"
         style={{
           outline: 'none',
           border: 'none',
@@ -45,7 +45,7 @@ const ScrollToTop = () => {
         onClick={backToTop}
         aria-label="Back to top"
       >
-        <ArrowCircleUpIcon style={{ fontSize: '2.5rem', color: '#fff' }} />
+        <ArrowCircleUpIcon style={{ fontSize: '2.5rem' }} />
       </button>
     </div>
   );

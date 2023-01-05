@@ -1,5 +1,4 @@
 import React from 'react';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Footer = () => (
   <div style={{
@@ -7,25 +6,24 @@ const Footer = () => (
     justifyContent: 'space-around',
     alignItems: 'center',
     borderTop: '1px solid #fff',
+    gap: '1rem',
   }}
   >
-    <div>
+    <div style={{
+      margin: '1rem 0 1rem 0',
+    }}
+    >
       <p>
-        Created with
+        Created by
         {' '}
-        <FavoriteIcon style={{
-          display: 'inline-block',
-          color: 'red',
-          height: '1rem',
-        }}
-        />
-        {' '}
-        by Mancoba Sihlongonyane
+        <em>Mancoba Sihlongonyane</em>
       </p>
     </div>
     <div>
       <p>
-        Copyright &copy;
+        &copy; Copyright
+        {' '}
+        2023 -
         {' '}
         {new Date().getFullYear()}
       </p>

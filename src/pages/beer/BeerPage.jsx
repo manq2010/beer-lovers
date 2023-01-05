@@ -20,12 +20,6 @@ const BeerPage = () => {
         </title>
         <meta name="description" content="Beer lovers application" />
       </Helmet>
-
-      {/* <h1>Beer</h1>
-      <button type="button">
-        <NavLink to="/">To home</NavLink>
-      </button> */}
-
       <Navbar />
       <div>
         <SingleBeer

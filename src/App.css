@@ -14,12 +14,14 @@
   --bg: #436ab3;
   --card-bg: #35558b;
   --color: #fff;
+  --hover: #4c4f4c;
 }
 
 .pink {
   --bg: #ff5192;
   --card-bg: #ba486e;
   --color: #fff;
+  --hover: #3a264a;
 }
 
 input::placeholder {
@@ -44,7 +46,6 @@ input::placeholder {
 }
 
 .App-header {
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -69,11 +70,11 @@ input::placeholder {
 }
 
 a {
-  color: #fff;
+  color: var(--color);
 }
 
 a:hover {
-  color: #4c4f4c;
+  color: var(--hover);
 }
 
 .icons {
@@ -94,4 +95,13 @@ a:hover {
   .search-button {
     border: none !important;
   }
+}
+
+.btn-scroll {
+  color: var(--color);
+}
+
+.btn-scroll:hover {
+  font-size: 2.7rem;
+  color: var(--hover);
 }

@@ -9,8 +9,6 @@ import Brightness2Icon from '@mui/icons-material/Brightness2';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-// import FilterAltIcon from '@mui/icons-material/FilterAlt';
-// import HomeIcon from '@mui/icons-material/Home';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
 import { ThemeContext } from '../../contexts/theme';
@@ -19,7 +17,6 @@ const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
   // Prepare Redux dispatch method:
   const dispatch = useDispatch();
-
   const { showSearchInput } = useSelector((state) => state.beerReducer);
 
   const shortName = (name) => {
@@ -119,23 +116,6 @@ const Navbar = () => {
           </li>
         </div>
       </ul>
-
-      {/* <ul>
-                <li>
-                  <NavLink
-                    to="/"
-                  >
-                    <h1>
-                      <SportsBarIcon />
-                      Name of beer!
-                    </h1>
-                    <button type="button" onClick={() => dispatch(toggleNavMenu())}>
-                      <HomeIcon />
-                    </button>
-                  </NavLink>
-                </li>
-              </ul> */}
-
       <button
         type="button"
         onClick={toggleTheme}
