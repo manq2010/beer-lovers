@@ -56,6 +56,10 @@ input::placeholder {
   }
 }
 
+a {
+  color: #fff;
+}
+
 .icons {
   display: block;
 }

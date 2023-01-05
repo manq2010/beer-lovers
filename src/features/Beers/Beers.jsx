@@ -69,7 +69,7 @@ const Beers = () => {
               </Grid>
             ) : (
               <div style={{
-                height: '60vh',
+                height: '40vh',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',

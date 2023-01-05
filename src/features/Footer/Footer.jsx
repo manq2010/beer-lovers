@@ -2,7 +2,13 @@ import React from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Footer = () => (
-  <div>
+  <div style={{
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderTop: '1px solid #fff',
+  }}
+  >
     <div>
       <p>
         Created with
