@@ -8,10 +8,20 @@ const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const pinkMediaQuery = window.matchMedia('(prefers-color-scheme: pink)');
-    setThemeName(pinkMediaQuery.matches ? 'pink' : 'blue');
-    pinkMediaQuery.addEventListener('change', (e) => {
-      setThemeName(e.matches ? 'pink' : 'blue');
-    });
+
+    if (typeof pinkMediaQuery !== 'undefined' && pinkMediaQuery.matches) {
+      // myObject is defined and has a property called 'matches'
+      // we can safely access the 'matches' property here
+
+      setThemeName(pinkMediaQuery.matches ? 'pink' : 'blue');
+      pinkMediaQuery.addEventListener('change', (e) => {
+        setThemeName(e.matches ? 'pink' : 'blue');
+      });
+    } else {
+      // myObject is either null or undefined, or it does not have a 'matches' property
+      // we should do something else here
+
+    }
   }, []);
 
   const toggleTheme = () => {

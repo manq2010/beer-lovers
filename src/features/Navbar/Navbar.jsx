@@ -33,6 +33,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/"
+            data-testid={shortName(headerData.title)}
             style={{
               textDecoration: 'none',
               color: '#fff',
@@ -81,8 +82,8 @@ const Navbar = () => {
             </button>
           )
         }
-
           </NavLink>
+
         </li>
         <div style={{
           display: 'flex',
