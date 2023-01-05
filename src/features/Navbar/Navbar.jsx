@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import SearchIcon from '@mui/icons-material/Search';
-import Brightness2Icon from '@mui/icons-material/Brightness2';
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
@@ -134,12 +134,29 @@ const Navbar = () => {
                 backgroundColor: 'transparent',
                 border: 'none',
                 margin: '1rem 1rem 0 0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
               type="button"
               onClick={toggleTheme}
               aria-label="toggle theme"
             >
-              {themeName === 'pink' ? <WbSunnyRoundedIcon className="theme-btn" /> : <Brightness2Icon className="theme-btn" />}
+              {themeName === 'pink' ? (
+                <ToggleOffIcon
+                  className="theme-btn"
+                  style={{
+                    fontSize: '2.7rem',
+                  }}
+                />
+              ) : (
+                <ToggleOnIcon
+                  className="theme-btn"
+                  style={{
+                    fontSize: '2.7rem',
+                  }}
+                />
+              )}
             </button>
           </li>
         </div>

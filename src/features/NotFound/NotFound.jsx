@@ -12,7 +12,7 @@ const NotFound = () => (
   <NotFoundContainer>
     <h3>404!</h3>
     <p>
-      Oops Page
+      Page
       {' '}
       <em>Not</em>
       {' '}
