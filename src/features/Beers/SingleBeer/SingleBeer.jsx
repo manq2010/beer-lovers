@@ -9,6 +9,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Paper from '@mui/material/Paper';
 import { toggleShowSearchInput } from '../../../redux/BeerSlice/beerSlice';
+import './SingleBeer.css';
 
 const SingleBeer = ({ beer }) => {
   const dispatch = useDispatch();
@@ -39,106 +40,132 @@ const SingleBeer = ({ beer }) => {
     return (
       <Paper
         sx={{
-          p: 2,
-          m: '10%',
+          // m: '10%',
           marginTop: '1rem',
           justifyContent: 'center',
-          // width: '80%',
-          // height: 350,
-          // flexGrow: 1,
-          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#cbddf2' : '#35558b'),
-          color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff'),
+          alignItems: 'center',
+          borderRadius: '10px',
+          // boxShadow: 1,
+
+          display: 'inline',
+          fontWeight: 'bold',
+          mx: 0.5,
+          fontSize: 14,
         }}
       >
-        <div
-          style={{
-            background: '#fffafa',
-            padding: '10px',
-            borderRadius: '5px',
-          }}
+        <Grid
+          className="grid"
+          justifyContent="center"
+          alignItems="center"
+          item
+          padding={2}
+          paddingTop={0}
         >
-          <img
-            src={beer.beer_image}
-            alt={beer.beer_name}
+          <div
             style={{
-              height: '350px',
+              background: '#fffafa',
+              padding: '10px',
+              borderRadius: '5px',
             }}
-          />
-        </div>
-        <div>
-          <h2>{beer.beer_name}</h2>
-        </div>
-
-        <div>
-          <h1 style={{ textTransform: 'uppercase' }}>{beer.beer_tagline}</h1>
-          <div>
-            <p>{beer.beer_description}</p>
-          </div>
-
-          <div style={{
-            display: 'flex',
-            borderRadius: '5px',
-            justifyContent: 'space-between',
-            padding: '0.5rem',
-            maxWidth: '400px',
-            minWidth: '200px',
-            margin: 'auto',
-            backgroundColor: '#fffafa',
-            color: '#35558b',
-          }}
           >
-            <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
+            <img
+              className="beer-animation"
+              src={beer.beer_image}
+              alt={beer.beer_name}
+              style={{
+                height: '350px',
               }}
-              >
-                ABV
-              </span>
-              <p>
-                {beer.beer_alcohol_volume}
-                %
-              </p>
-            </div>
-            <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
-              }}
-              >
-                pH
-              </span>
-              <p>{beer.beer_ph}</p>
-            </div>
-            <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
-              }}
-              >
-                First Brew
-              </span>
-              <p>{beer.beer_first_brewed}</p>
-            </div>
-
+            />
           </div>
-        </div>
-
-        <div>
-          <div>
-            <div style={{
+          <div
+            style={{
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: '0.5rem',
-              paddingTop: '0',
-              marginTop: '1rem',
-              marginBottom: '-1rem',
-              borderTop: '1px solid #fffafa',
+              flexDirection: 'column',
+              gap: '1rem',
+              justifyContent: 'center',
+              // alignItems: 'center',
             }}
+          >
+            <div
+              className="center"
             >
-              <h3>Food Pairing</h3>
-              {
+              <h2>
+                {beer.beer_name}
+              </h2>
+            </div>
+            <div className="center">
+              <h1 style={{ textTransform: 'uppercase' }}>{beer.beer_tagline}</h1>
+            </div>
+            <div className="center">
+              <p>{beer.beer_description}</p>
+            </div>
+            <div>
+              <div
+                className="beerItem"
+                style={{
+                  display: 'flex',
+                  borderRadius: '5px',
+                  justifyContent: 'space-between',
+                  padding: '0.5rem',
+                  maxWidth: '400px',
+                  minWidth: '200px',
+                  margin: 'auto',
+                  backgroundColor: '#fffafa',
+                // color: '#35558b',
+                }}
+              >
+                <div>
+                  <span style={{
+                    fontWeight: 'bold',
+                    opacity: '0.5',
+                  }}
+                  >
+                    ABV
+                  </span>
+                  <p>
+                    {beer.beer_alcohol_volume}
+                    %
+                  </p>
+                </div>
+                <div>
+                  <span style={{
+                    fontWeight: 'bold',
+                    opacity: '0.5',
+                  }}
+                  >
+                    pH
+                  </span>
+                  <p>{beer.beer_ph}</p>
+                </div>
+                <div>
+                  <span style={{
+                    fontWeight: 'bold',
+                    opacity: '0.5',
+                  }}
+                  >
+                    First Brew
+                  </span>
+                  <p>{beer.beer_first_brewed}</p>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '0.5rem',
+                  paddingTop: '0',
+                  marginTop: '1rem',
+                  marginBottom: '-1rem',
+                  borderTop: '1px solid #fffafa',
+                }}
+                >
+                  <h3>Food Pairing</h3>
+                  {
                 showMoreFood ? (
                   <AddIcon
                     onClick={handleShowMoreFood}
@@ -151,8 +178,8 @@ const SingleBeer = ({ beer }) => {
                   />
                 )
               }
-            </div>
-            {
+                </div>
+                {
               showMoreFood ? (
                 null
               ) : (
@@ -167,28 +194,36 @@ const SingleBeer = ({ beer }) => {
                   >
                     {
                 beer.beer_food_pairing.map((food) => (
-                  <li key={uuidv4()}>{food}</li>
+                  <li
+                    style={{
+                      margin: '0.5rem 0 0 1.5rem',
+                    }}
+                    key={uuidv4()}
+                  >
+                    {food}
+
+                  </li>
                 ))
               }
                   </ul>
                 </div>
               )
             }
-          </div>
-          <div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '0.5rem',
-                paddingTop: '0',
-                marginTop: '0.5rem',
-                borderTop: '1px solid #fffafa',
-              }}
-            >
-              <h3>Brewers Tips</h3>
-              {
+              </div>
+              <div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '0.5rem',
+                    paddingTop: '0',
+                    marginTop: '0.5rem',
+                    borderTop: '1px solid #fffafa',
+                  }}
+                >
+                  <h3>Brewers Tips</h3>
+                  {
                 showMoreTip ? (
                   <AddIcon
                     onClick={handleShowMoreTip}
@@ -201,8 +236,8 @@ const SingleBeer = ({ beer }) => {
                   />
                 )
               }
-            </div>
-            {
+                </div>
+                {
               showMoreTip ? (
                 null
               ) : (
@@ -233,8 +268,11 @@ const SingleBeer = ({ beer }) => {
                 </div>
               )
             }
+              </div>
+            </div>
           </div>
-        </div>
+
+        </Grid>
       </Paper>
     );
   }
@@ -249,82 +287,96 @@ const SingleBeer = ({ beer }) => {
       }}
     >
       <Paper
-        sx={{
-          cursor: 'pointer',
-          p: 2,
-          m: 2,
-          margin: 'auto',
-          justifyContent: 'center',
-          width: 170,
-          height: 360,
-          // flexGrow: 1,
-          backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#35558b'),
-          color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff'),
-        }}
+        sx={
+          [{
+            cursor: 'pointer',
+            // p: 2,
+            // m: 2,
+            margin: 'auto',
+            justifyContent: 'center',
+            borderRadius: '10px',
+            display: 'inline',
+            fontWeight: 'light',
+            mx: 0.5,
+            fontSize: 14,
+          },
+          {
+            '&:hover': {
+              fontWeight: 'bold',
+              fontSize: 15,
+            },
+          },
+          ]
+}
       >
         <Grid
+          className="grid"
           justifyContent="center"
           alignItems="center"
           item
+          padding={1}
+          paddingTop={0}
         >
           <div
             style={{
               background: '#fff',
               padding: '10px',
+              margin: '10px',
               borderRadius: '5px',
             }}
           >
             <img src={beer.beer_image} alt={beer.beer_name} style={{ height: '200px' }} />
           </div>
-          <h3 style={{ textTransform: 'uppercase' }}>
-            {beer.beer_name}
-          </h3>
-          <h3 style={{ textTransform: 'capitalize', opacity: '0.8', fontStyle: 'italic' }}>{beer.beer_tagline}</h3>
           <div style={{
             display: 'flex',
-            justifyContent: 'space-around',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '0.3rem',
           }}
           >
-            <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
-              }}
-              >
-                ABV
-                {' '}
-              </span>
-              <span>
-                {beer.beer_alcohol_volume}
-                %
-              </span>
+            <h3 style={{ textTransform: 'uppercase' }}>
+              {beer.beer_name}
+            </h3>
+            <h3 style={{
+              textTransform: 'capitalize', opacity: '0.8', fontStyle: 'italic',
+            }}
+            >
+              {beer.beer_tagline}
+            </h3>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+            }}
+            >
+              <div>
+                <span style={{
+                  fontWeight: 'bold',
+                  opacity: '0.5',
+                }}
+                >
+                  ABV
+                  {' '}
+                </span>
+                <span>
+                  {beer.beer_alcohol_volume}
+                  %
+                </span>
+              </div>
+              <div>
+                <span style={{
+                  fontWeight: 'bold',
+                  opacity: '0.5',
+                }}
+                >
+                  PH
+                  {' '}
+                </span>
+                <span>
+                  {beer.beer_ph}
+                </span>
+              </div>
             </div>
-            <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
-              }}
-              >
-                PH
-                {' '}
-              </span>
-              <span>
-                {beer.beer_ph}
-              </span>
-            </div>
-            {/* <div>
-              <span style={{
-                fontWeight: 'bold',
-                opacity: '0.5',
-              }}
-              >
-                First Brew
-                {' '}
-              </span>
-              <span>
-                {beer.beer_first_brewed}
-              </span>
-            </div> */}
           </div>
         </Grid>
       </Paper>

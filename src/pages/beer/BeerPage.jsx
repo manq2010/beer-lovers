@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import headerData from '../../data/headerData';
 import SingleBeer from '../../features/Beers/SingleBeer/SingleBeer';
+import Contact from '../../features/Contact/Contact';
 import Footer from '../../features/Footer/Footer';
 import Navbar from '../../features/Navbar/Navbar';
 
@@ -32,6 +33,7 @@ const BeerPage = () => {
           beer={stateData.beer}
         />
       </div>
+      <Contact />
       <Footer />
     </>
   );

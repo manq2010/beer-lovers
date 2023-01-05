@@ -1,23 +1,35 @@
 * {
   font-family: 'Lato', sans-serif;
-}
-
-body {
-  /* background-color: rgb(67, 106, 179); */
-  background-color: #436ab3;
-
-  /* background-color: rgb(89, 139, 232); */
-
-  /* background-color: rgb(53, 84, 139); */
-  color: #fff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .App {
-  text-align: center;
+  color: var(--color);
+  background-color: var(--bg);
+}
+
+.blue {
+  --bg: #436ab3;
+  --card-bg: #35558b;
+  --color: #fff;
+}
+
+.pink {
+  --bg: #ff5192;
+  --card-bg: #ba486e;
+  --color: #fff;
 }
 
 input::placeholder {
-  color: #436ab3;
+  color: var(--bg);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -32,7 +44,7 @@ input::placeholder {
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,6 +70,10 @@ input::placeholder {
 
 a {
   color: #fff;
+}
+
+a:hover {
+  color: #4c4f4c;
 }
 
 .icons {

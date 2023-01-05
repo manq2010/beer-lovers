@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeContext } from './contexts/theme';
 import './App.css';
 // Pages
 import NotFoundPage from './pages/notFound/NotFoundPage';
@@ -9,8 +11,10 @@ import BeerPage from './pages/beer/BeerPage';
 import ScrollToTop from './features/ScrollToTop/ScrollToTop';
 
 function App() {
+  const [{ themeName }] = useContext(ThemeContext);
+
   return (
-    <div className="App">
+    <div className={`${themeName} App`}>
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />

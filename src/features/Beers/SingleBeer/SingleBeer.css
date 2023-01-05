@@ -1,0 +1,35 @@
+.grid {
+  color: var(--color);
+  background-color: var(--card-bg);
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px;
+}
+
+.beerItem {
+  color: var(--card-bg);
+}
+
+.beer-animation {
+  position: relative;
+  animation: beer 6s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes beer {
+  0% {
+    left: 0;
+    top: 0;
+  }
+
+  100% {
+    left: calc(100vw - 150px);
+    top: 0;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

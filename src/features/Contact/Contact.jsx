@@ -9,16 +9,18 @@ const Contact = () => (
   <div
     style={{
       color: '#fff',
-      marginBottom: '0.5rem',
+      margin: '1rem 0 1rem 0',
+      textTransform: 'capitalize',
     }}
   >
-    <h2>Connect with me</h2>
+    <h2 className="center">Connect with me</h2>
     <div
       style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         gap: '0.5rem',
+        marginTop: '1rem',
       }}
     >
       {contactData.twitter && (

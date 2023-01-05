@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import SearchIcon from '@mui/icons-material/Search';
 import MicIcon from '@mui/icons-material/Mic';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import Brightness2Icon from '@mui/icons-material/Brightness2';
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 // import FilterAltIcon from '@mui/icons-material/FilterAlt';
 // import HomeIcon from '@mui/icons-material/Home';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
+import { ThemeContext } from '../../contexts/theme';
 
 const Navbar = () => {
+  const [{ themeName, toggleTheme }] = useContext(ThemeContext);
   // Prepare Redux dispatch method:
   const dispatch = useDispatch();
 
@@ -131,6 +135,14 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul> */}
+
+      <button
+        type="button"
+        onClick={toggleTheme}
+        aria-label="toggle theme"
+      >
+        {themeName === 'pink' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
+      </button>
 
     </nav>
   );
