@@ -6,20 +6,18 @@ import MainPage from './pages/main/MainPage';
 import BeerPage from './pages/beer/BeerPage';
 
 // Components
-import BackToTop from './features/BackToTop/BackToTop';
-// import ScrollToTop from './utils/ScrollToTop';
+import ScrollToTop from './features/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <BackToTop />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/beer" element={<BeerPage />} />
         </Routes>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
       </Router>
     </div>
   );

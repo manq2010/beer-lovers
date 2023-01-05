@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
+import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import SingleBeer from './SingleBeer/SingleBeer';
 // import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 
@@ -41,7 +42,11 @@ const Beers = () => {
       }
 
       { isLoading ? (
-        <h3>Loading...</h3>
+        <h3>
+          <span><HourglassTopIcon /></span>
+          {' '}
+          Loading...
+        </h3>
       ) : (
         <div>
           {
