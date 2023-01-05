@@ -11,7 +11,7 @@ const Beers = () => {
   const { beers, isLoading, showSearchInput } = states;
   const [search, setSearch] = useState('');
 
-  const filteredBeers = beers.filter((beer) => {
+  const searchedBeers = beers.filter((beer) => {
     const content = beer.beer_name + beer.beer_description;
     return content.toLowerCase().includes(search.toLowerCase());
   });
@@ -50,7 +50,7 @@ const Beers = () => {
       ) : (
         <div>
           {
-            filteredBeers.length ? (
+            searchedBeers.length ? (
               <Grid
                 padding="1rem"
                 marginTop="2rem"
@@ -60,7 +60,7 @@ const Beers = () => {
                 justifyContent="center"
                 alignItems="center"
               >
-                {filteredBeers.map((beer) => (
+                {searchedBeers.map((beer) => (
                   <SingleBeer
                     key={uuidv4()}
                     beer={beer}
