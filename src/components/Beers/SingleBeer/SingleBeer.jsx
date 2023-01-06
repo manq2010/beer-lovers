@@ -300,101 +300,53 @@ const SingleBeer = ({ beer }) => {
       data-testid={beer.beer_id}
       style={{
         border: 'none',
-        backgroundColor: 'transparent',
+        backgroundColor: 'none',
       }}
     >
-      <Paper
-        sx={
-          [{
-            cursor: 'pointer',
-            margin: 'auto',
-            justifyContent: 'center',
-            borderRadius: '10px',
-            display: 'inline',
-            fontWeight: 'light',
-            // mx: 0.5,
-            // fontSize: 14,
-            marginTop: 0,
-          },
-          {
-            '&:hover': {
-              fontWeight: 'bold',
-            },
-          },
-          ]
-}
+      <img src={beer.beer_image} alt={beer.beer_name} style={{ height: '200px' }} />
+
+      <h3 style={{ textTransform: 'uppercase' }}>
+        {beer.beer_name}
+      </h3>
+      <h3 style={{
+        textTransform: 'capitalize', opacity: '0.8', fontStyle: 'italic',
+      }}
       >
-        <Grid
-          className="grid-beer"
-          justifyContent="center"
-          alignItems="center"
-          item
-          padding={1}
-          // paddingTop={0}
-        >
-          <div
-            style={{
-              background: '#fff',
-              padding: '10px',
-              margin: '10px',
-              borderRadius: '5px',
-            }}
-          >
-            <img src={beer.beer_image} alt={beer.beer_name} style={{ height: '200px' }} />
-          </div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '0.3rem',
+        {beer.beer_tagline}
+      </h3>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+      }}
+      >
+        <div>
+          <span style={{
+            fontWeight: 'bold',
+            opacity: '0.5',
           }}
           >
-            <h3 style={{ textTransform: 'uppercase' }}>
-              {beer.beer_name}
-            </h3>
-            <h3 style={{
-              textTransform: 'capitalize', opacity: '0.8', fontStyle: 'italic',
-            }}
-            >
-              {beer.beer_tagline}
-            </h3>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-around',
-            }}
-            >
-              <div>
-                <span style={{
-                  fontWeight: 'bold',
-                  opacity: '0.5',
-                }}
-                >
-                  ABV
-                  {' '}
-                </span>
-                <span>
-                  {beer.beer_alcohol_volume}
-                  %
-                </span>
-              </div>
-              <div>
-                <span style={{
-                  fontWeight: 'bold',
-                  opacity: '0.5',
-                }}
-                >
-                  PH
-                  {' '}
-                </span>
-                <span>
-                  {beer.beer_ph}
-                </span>
-              </div>
-            </div>
-          </div>
-        </Grid>
-      </Paper>
+            ABV
+            {' '}
+          </span>
+          <span>
+            {beer.beer_alcohol_volume}
+            %
+          </span>
+        </div>
+        <div>
+          <span style={{
+            fontWeight: 'bold',
+            opacity: '0.5',
+          }}
+          >
+            PH
+            {' '}
+          </span>
+          <span>
+            {beer.beer_ph}
+          </span>
+        </div>
+      </div>
     </button>
   );
 };

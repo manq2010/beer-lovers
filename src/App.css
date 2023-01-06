@@ -130,3 +130,13 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+button:nth-child(4n),
+button:nth-child(4n-3) {
+  background-color: red;
+}
+
+button:nth-child(4n-2),
+button:nth-child(4n-1) {
+  background-color: green;
+}

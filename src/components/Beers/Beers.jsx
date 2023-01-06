@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { Grid } from '@mui/material';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import SingleBeer from './SingleBeer/SingleBeer';
 
@@ -79,25 +78,14 @@ const Beers = () => {
                     beers
                   </p>
                 </div>
-                <div>
-                  <Grid
-                    padding="1rem"
-                    marginTop="2rem"
-                    gap="2rem"
-                    container
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <div className="grid">
-                      {searchedBeers.map((beer) => (
-                        <SingleBeer
-                          key={uuidv4()}
-                          beer={beer}
-                        />
-                      ))}
-                    </div>
-                  </Grid>
+                <div className="grid">
+                  {searchedBeers.map((beer, index) => (
+                    <SingleBeer
+                      className={`${index % 2 === 0 ? 'even' : ''}`}
+                      key={uuidv4()}
+                      beer={beer}
+                    />
+                  ))}
                 </div>
               </div>
             ) : (
