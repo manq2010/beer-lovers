@@ -1,0 +1,28 @@
+.grid {
+  color: var(--color);
+  background-color: var(--card-bg);
+  height: 100%;
+}
+
+.grid-shadow {
+  box-shadow: 2px 2px 20px;
+}
+
+.grid-beer {
+  color: var(--color);
+  height: 100%;
+}
+
+.grid-beer:hover {
+  box-shadow: 2px 2px 20px;
+}
+
+.beerItem {
+  color: var(--card-bg);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,27 +1,21 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeContext } from './contexts/theme';
 import './App.css';
 
+// Components
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import AppRoutes from './AppRoutes';
+
 function App() {
+  const [{ themeName }] = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${themeName} App`}>
+      <BrowserRouter>
+        <AppRoutes />
+        <ScrollToTop />
+      </BrowserRouter>
     </div>
   );
 }

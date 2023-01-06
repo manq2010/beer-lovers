@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
+import { ThemeProvider } from './contexts/theme';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { fetchBeers } from './redux/BeerSlice/beerSlice';
+
+// fetch all beers once
+store.dispatch(fetchBeers());
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </Provider>
+
   </React.StrictMode>,
 );
 

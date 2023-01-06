@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Project <a name="about-project"></a>
 
-> "Project"
+> "Beers-Lovers" is a website that displays details of Brewdog beers. It allows users to search for their favorite beers or filter based on categories.
 
 ## 🛠 Built With <a name="built-with"></a>
 - HTML
@@ -82,7 +82,7 @@ After you're finished please remove all the comments and instructions!
 
 > Using the project will help you to : 
 
-- **Be able so do basic calculations**
+- **Filter beers by name and get their details**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,7 +90,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Beer Lovers Live Demo Link](https://beer-lovers.onrender.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -112,7 +112,7 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository by using the command line : 
-- `git clone https://github.com/manq2010/<repo>`
+- `git clone https://github.com/manq2010/beer-lovers.git`
 
 ### Install
 
@@ -157,7 +157,7 @@ You can deploy this project using:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- **Use Fragments and more hooks ⏳⌛️**
+- **Add filter options for other catergories ⏳⌛️**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,7 +183,10 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Thank you [Microverse](https://www.microverse.org/) for the project
+**Thank you** 
+- [Microverse](https://www.microverse.org/) for the project
+- [Punk Api](https://punkapi.com/documentation/v2) for the API and documentation
+- [Behance](https://www.behance.net/sakwadesignstudio) for the design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,7 +197,7 @@ Give a ⭐️ if you like this project!
 
 - **How to use the project**
 
-  - ```git clone https://github.com/manq2010/math-magicians```
+  - ```git clone https://github.com/manq2010/beer-lovers.git```
 
 - **How to contribute to the project**
 
