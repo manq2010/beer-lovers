@@ -80,22 +80,26 @@ const Beers = () => {
                     beers
                   </p>
                 </div>
-                <Grid
-                  padding="1rem"
-                  marginTop="2rem"
-                  gap="2rem"
-                  container
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="center"
-                >
-                  {searchedBeers.map((beer) => (
-                    <SingleBeer
-                      key={uuidv4()}
-                      beer={beer}
-                    />
-                  ))}
-                </Grid>
+                <div>
+                  <Grid
+                    padding="1rem"
+                    marginTop="2rem"
+                    gap="2rem"
+                    container
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <div className="grid">
+                      {searchedBeers.map((beer) => (
+                        <SingleBeer
+                          key={uuidv4()}
+                          beer={beer}
+                        />
+                      ))}
+                    </div>
+                  </Grid>
+                </div>
               </div>
             ) : (
               <div style={{
