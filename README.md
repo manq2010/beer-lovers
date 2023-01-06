@@ -183,8 +183,10 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Thank you [Microverse](https://www.microverse.org/) for the project
-- Also [Punk Api](https://punkapi.com/documentation/v2) for the API and documentation
+**Thank you** 
+- [Microverse](https://www.microverse.org/) for the project
+- [Punk Api](https://punkapi.com/documentation/v2) for the API and documentation
+- [Behance](https://www.behance.net/sakwadesignstudio) for the design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
