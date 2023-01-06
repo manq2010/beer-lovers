@@ -3,7 +3,7 @@ import { createMemoryHistory } from 'history';
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import ReactTestUtils, { act } from 'react-dom/test-utils';
+// import ReactTestUtils, { act } from 'react-dom/test-utils';
 import store from '../redux/configureStore';
 import { ThemeProvider } from '../contexts/theme';
 import AppRoutes from '../AppRoutes';
@@ -11,6 +11,7 @@ import NotFound from '../features/NotFound/NotFound';
 import MainPage from '../pages/main/MainPage';
 import BeerPage from '../pages/beer/BeerPage';
 import ScrollToTop from '../features/ScrollToTop/ScrollToTop';
+// import App from '../App';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -148,30 +149,15 @@ describe('BeerPage component is rendererd', () => {
 
 describe('ScrollToTop component is rendererd', () => {
 // Mock for testing purposes
-//   const mockScrollToTop = jest.fn();
-//   window.scrollTo = mockScrollToTop;
+  const mockScrollTo = jest.fn();
+  window.scrollTo = mockScrollTo;
+
   test('Component is rendererd', () => {
-    const component = render(
-      <Provider store={store}>
-        <ThemeProvider>
-          <BrowserRouter>
-            <ScrollToTop />
-          </BrowserRouter>
-        </ThemeProvider>
-      </Provider>,
+    render(
+      <ScrollToTop />,
     );
 
-    window.scrollY = 1000;
-
-    // const button = ReactTestUtils.findRenderedDOMComponentWithTag(component, 'button');
-    // act(() => {
-    //   ReactTestUtils.Simulate.click(button);
-    // });
-
-    // expect(mockScrollToTop).toHaveBeenCalledWith({ top: 0, left: 0, behavior: 'smooth' });
-
-    const button = ReactTestUtils.findRenderedDOMComponentWithTag(component, 'button');
-    ReactTestUtils.Simulate.click(button);
-    expect(window.scrollY).toBe(0);
+    fireEvent.click(screen.getByTestId(/scroll/));
+    expect(mockScrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
   });
 });

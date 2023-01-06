@@ -448,7 +448,7 @@ exports[`MainPage component is rendererd matches snapshot 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
-          "height": "60vh",
+          "height": "65vh",
           "justifyContent": "center",
         }
       }

@@ -20,7 +20,6 @@ const ThemeProvider = ({ children }) => {
     } else {
       // myObject is either null or undefined, or it does not have a 'matches' property
       // we should do something else here
-
     }
   }, []);
 

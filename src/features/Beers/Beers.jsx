@@ -53,7 +53,7 @@ const Beers = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '60vh',
+          height: '65vh',
         }}
         >
           <span><HourglassTopIcon /></span>
