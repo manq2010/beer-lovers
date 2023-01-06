@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Grid } from '@mui/material';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import SingleBeer from './SingleBeer/SingleBeer';
-// import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 
 const Beers = () => {
   const states = useSelector((state) => state.beerReducer);

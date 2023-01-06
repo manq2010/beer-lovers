@@ -2,10 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import headerData from '../../data/headerData';
-import SingleBeer from '../../features/Beers/SingleBeer/SingleBeer';
-import Contact from '../../features/Contact/Contact';
-import Footer from '../../features/Footer/Footer';
-import Navbar from '../../features/Navbar/Navbar';
+import SingleBeer from '../../components/Beers/SingleBeer/SingleBeer';
+import Contact from '../../components/Contact/Contact';
+import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
 
 const BeerPage = () => {
   const location = useLocation();

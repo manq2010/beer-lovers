@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Navbar from '../../features/Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 import headerData from '../../data/headerData';
-import Footer from '../../features/Footer/Footer';
-import Beers from '../../features/Beers/Beers';
-import Contact from '../../features/Contact/Contact';
+import Footer from '../../components/Footer/Footer';
+import Beers from '../../components/Beers/Beers';
+import Contact from '../../components/Contact/Contact';
 
 const MainPage = () => (
   <div>

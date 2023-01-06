@@ -7,10 +7,10 @@ import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
 import { ThemeProvider } from '../contexts/theme';
 import AppRoutes from '../AppRoutes';
-import NotFound from '../features/NotFound/NotFound';
+import NotFound from '../components/NotFound/NotFound';
 import MainPage from '../pages/main/MainPage';
 import BeerPage from '../pages/beer/BeerPage';
-import ScrollToTop from '../features/ScrollToTop/ScrollToTop';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 // import App from '../App';
 
 Object.defineProperty(window, 'matchMedia', {

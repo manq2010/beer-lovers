@@ -4,7 +4,7 @@ import { ThemeContext } from './contexts/theme';
 import './App.css';
 
 // Components
-import ScrollToTop from './features/ScrollToTop/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AppRoutes from './AppRoutes';
 
 function App() {
