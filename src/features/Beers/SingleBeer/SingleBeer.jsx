@@ -297,6 +297,7 @@ const SingleBeer = ({ beer }) => {
     <button
       type="button"
       onClick={handleClick}
+      data-testid={beer.beer_id}
       style={{
         border: 'none',
         backgroundColor: 'transparent',

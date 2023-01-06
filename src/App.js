@@ -13,11 +13,6 @@ function App() {
   return (
     <div className={`${themeName} App`}>
       <BrowserRouter>
-        {/* <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/beer" element={<BeerPage />} />
-        </Routes> */}
         <AppRoutes />
         <ScrollToTop />
       </BrowserRouter>
