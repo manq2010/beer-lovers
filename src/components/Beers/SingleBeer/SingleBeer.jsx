@@ -62,6 +62,7 @@ const SingleBeer = ({ beer }) => {
             alignItems="center"
             item
             padding={2}
+            gap={2}
           >
             <div
               style={{
@@ -300,7 +301,7 @@ const SingleBeer = ({ beer }) => {
       data-testid={beer.beer_id}
       style={{
         border: 'none',
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
       }}
     >
       <Paper
@@ -334,10 +335,10 @@ const SingleBeer = ({ beer }) => {
         >
           <div
             style={{
-              background: '#fff',
-              padding: '10px',
-              margin: '10px',
-              borderRadius: '5px',
+              // background: '#fff',
+              // padding: '10px',
+              // margin: '10px',
+              // borderRadius: '5px',
             }}
           >
             <img src={beer.beer_image} alt={beer.beer_name} style={{ height: '200px' }} />

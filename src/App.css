@@ -16,6 +16,8 @@
   --color: #fff;
   --hover: #4c4f4c;
   --theme-btn: #ff5192;
+  --theme-grid: #35558b;
+  --theme-grid-light: #4467a5;
 }
 
 .pink {
@@ -24,6 +26,8 @@
   --color: #fff;
   --hover: #3a264a;
   --theme-btn: #436ab3;
+  --theme-grid: #ba486e;
+  --theme-grid-light: #9d3759;
 }
 
 input::placeholder {
@@ -129,4 +133,14 @@ a:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+button:nth-child(4n),
+button:nth-child(4n-3) {
+  background-color: var(--theme-grid);
+}
+
+button:nth-child(4n-1),
+button:nth-child(4n-2) {
+  background-color: var(--theme-grid-light);
 }
