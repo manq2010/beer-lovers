@@ -57,7 +57,7 @@ const SingleBeer = ({ beer }) => {
           }}
         >
           <Grid
-            className="grid"
+            className="grid grid-shadow"
             justifyContent="center"
             alignItems="center"
             item
@@ -67,6 +67,7 @@ const SingleBeer = ({ beer }) => {
             <div
               style={{
                 background: '#fffafa',
+                opacity: '0.9',
                 padding: '10px',
                 borderRadius: '5px',
                 display: 'flex',

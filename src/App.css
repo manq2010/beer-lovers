@@ -17,7 +17,7 @@
   --hover: #4c4f4c;
   --theme-btn: #ff5192;
   --theme-grid: #35558b;
-  --theme-grid-light: #4467a5;
+  --theme-grid-light: #1f3e72;
 }
 
 .pink {
@@ -27,7 +27,7 @@
   --hover: #3a264a;
   --theme-btn: #436ab3;
   --theme-grid: #ba486e;
-  --theme-grid-light: #9d3759;
+  --theme-grid-light: #932549e4;
 }
 
 input::placeholder {
@@ -124,10 +124,6 @@ a:hover {
   .search-button {
     border: none !important;
   }
-
-  /* .header-beer {
-    display: none;
-  } */
 }
 
 .grid {
