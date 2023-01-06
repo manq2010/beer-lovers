@@ -9,7 +9,10 @@ import Navbar from '../../features/Navbar/Navbar';
 
 const BeerPage = () => {
   const location = useLocation();
-  const { stateData } = location.state;
+  // if (location.state) {
+  //   const { stateData } = location.state;
+  // }
+  const stateData = location.state?.stateData;
 
   return (
     <>
@@ -22,10 +25,14 @@ const BeerPage = () => {
       </Helmet>
       <Navbar />
       <div>
-        <SingleBeer
-          key={stateData.beer.id}
-          beer={stateData.beer}
-        />
+        {
+          stateData && typeof stateData === 'object' && (
+            <SingleBeer
+              key={stateData.beer.id}
+              beer={stateData.beer}
+            />
+          )
+        }
       </div>
       <Contact />
       <Footer />

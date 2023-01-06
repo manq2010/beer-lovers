@@ -23,7 +23,13 @@ const Beers = () => {
     <div>
       {
         showSearchInput ? (null) : (
-          <div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
             <input
               style={{
                 border: '1px solid #fff',
@@ -35,6 +41,7 @@ const Beers = () => {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onBlur={() => setSearch('')}
               placeholder="Search beer by name..."
             />
           </div>
@@ -42,7 +49,13 @@ const Beers = () => {
       }
 
       { isLoading ? (
-        <h3>
+        <h3 style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '65vh',
+        }}
+        >
           <span><HourglassTopIcon /></span>
           {' '}
           Loading...
@@ -51,25 +64,42 @@ const Beers = () => {
         <div>
           {
             searchedBeers.length ? (
-              <Grid
-                padding="1rem"
-                marginTop="2rem"
-                gap="2rem"
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-              >
-                {searchedBeers.map((beer) => (
-                  <SingleBeer
-                    key={uuidv4()}
-                    beer={beer}
-                  />
-                ))}
-              </Grid>
+              <div>
+                <div className="center">
+                  <p>
+                    Showing
+                    {' '}
+                    <b>
+                      {searchedBeers.length}
+                    </b>
+                    {' '}
+                    of
+                    {' '}
+                    {beers.length}
+                    {' '}
+                    beers
+                  </p>
+                </div>
+                <Grid
+                  padding="1rem"
+                  marginTop="2rem"
+                  gap="2rem"
+                  container
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  {searchedBeers.map((beer) => (
+                    <SingleBeer
+                      key={uuidv4()}
+                      beer={beer}
+                    />
+                  ))}
+                </Grid>
+              </div>
             ) : (
               <div style={{
-                height: '40vh',
+                height: '60vh',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',

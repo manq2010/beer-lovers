@@ -15,6 +15,7 @@
   --card-bg: #35558b;
   --color: #fff;
   --hover: #4c4f4c;
+  --theme-btn: #ff5192;
 }
 
 .pink {
@@ -22,6 +23,7 @@
   --card-bg: #ba486e;
   --color: #fff;
   --hover: #3a264a;
+  --theme-btn: #436ab3;
 }
 
 input::placeholder {
@@ -81,6 +83,25 @@ a:hover {
   display: block;
 }
 
+.btn-scroll {
+  color: var(--color);
+}
+
+.btn-scroll:hover {
+  font-size: 2.7rem;
+  color: var(--hover);
+}
+
+.theme-btn {
+  color: var(--theme-btn);
+}
+
+.header-beer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 600px) {
   .icons {
     display: none;
@@ -95,13 +116,8 @@ a:hover {
   .search-button {
     border: none !important;
   }
-}
 
-.btn-scroll {
-  color: var(--color);
-}
-
-.btn-scroll:hover {
-  font-size: 2.7rem;
-  color: var(--hover);
+  /* .header-beer {
+    display: none;
+  } */
 }

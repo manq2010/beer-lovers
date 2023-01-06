@@ -33,130 +33,148 @@ const SingleBeer = ({ beer }) => {
   if (path === '/beer') {
     dispatch(toggleShowSearchInput(false));
     return (
-      <Paper
-        sx={{
-          // m: '10%',
-          marginTop: '1rem',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: '10px',
-          display: 'inline',
-          fontWeight: 'bold',
-          mx: 0.5,
-          fontSize: 14,
-        }}
-      >
-        <Grid
-          className="grid"
-          justifyContent="center"
-          alignItems="center"
-          item
-          padding={2}
-          paddingTop={0}
-        >
-          <div
-            style={{
-              background: '#fffafa',
-              padding: '10px',
-              borderRadius: '5px',
-            }}
+      <div>
+        <div className="header-beer">
+          <h2 style={{
+            margin: '-2.5rem 2rem 0 3rem',
+            // minWidth: '1rem',
+          }}
           >
-            <img
-              className="beer-animation"
-              src={beer.beer_image}
-              alt={beer.beer_name}
-              style={{
-                height: '350px',
-              }}
-            />
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              justifyContent: 'center',
-            }}
+            {beer.beer_name}
+          </h2>
+        </div>
+        <Paper
+          sx={{
+          // m: '10%',
+            marginTop: '1rem',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: '10px',
+            display: 'inline',
+            fontWeight: 'bold',
+            mx: 0.5,
+            fontSize: 14,
+          }}
+        >
+          <Grid
+            className="grid"
+            justifyContent="center"
+            alignItems="center"
+            item
+            padding={2}
           >
             <div
-              className="center"
+              style={{
+                background: '#fffafa',
+                padding: '10px',
+                borderRadius: '5px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              <h2>
-                {beer.beer_name}
-              </h2>
-            </div>
-            <div className="center">
-              <h1 style={{ textTransform: 'uppercase' }}>{beer.beer_tagline}</h1>
-            </div>
-            <div className="center">
-              <p>{beer.beer_description}</p>
-            </div>
-            <div>
-              <div
-                className="beerItem"
+              <img
+                src={beer.beer_image}
+                alt={beer.beer_name}
                 style={{
-                  display: 'flex',
-                  borderRadius: '5px',
-                  justifyContent: 'space-between',
-                  padding: '0.5rem',
-                  maxWidth: '400px',
-                  minWidth: '200px',
-                  margin: 'auto',
-                  backgroundColor: '#fffafa',
+                  height: '350px',
                 }}
-              >
-                <div>
-                  <span style={{
-                    fontWeight: 'bold',
-                    opacity: '0.5',
-                  }}
-                  >
-                    ABV
-                  </span>
-                  <p>
-                    {beer.beer_alcohol_volume}
-                    %
-                  </p>
-                </div>
-                <div>
-                  <span style={{
-                    fontWeight: 'bold',
-                    opacity: '0.5',
-                  }}
-                  >
-                    pH
-                  </span>
-                  <p>{beer.beer_ph}</p>
-                </div>
-                <div>
-                  <span style={{
-                    fontWeight: 'bold',
-                    opacity: '0.5',
-                  }}
-                  >
-                    First Brew
-                  </span>
-                  <p>{beer.beer_first_brewed}</p>
-                </div>
-
-              </div>
+              />
             </div>
-
-            <div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                justifyContent: 'center',
+              }}
+            >
+              {/* <div
+                className="center"
+              >
+                <h2>
+                  {beer.beer_name}
+                </h2>
+              </div> */}
+              <div className="center">
+                <h1 style={{ textTransform: 'uppercase' }}>{beer.beer_tagline}</h1>
+              </div>
+              <div className="center">
+                <p>{beer.beer_description}</p>
+              </div>
               <div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '0.5rem',
-                  paddingTop: '0',
-                  marginTop: '1rem',
-                  marginBottom: '-1rem',
-                  borderTop: '1px solid #fffafa',
-                }}
+                <div
+                  className="beerItem"
+                  style={{
+                    display: 'flex',
+                    borderRadius: '5px',
+                    justifyContent: 'space-between',
+                    padding: '0.5rem',
+                    maxWidth: '400px',
+                    minWidth: '200px',
+                    margin: 'auto',
+                    backgroundColor: '#fffafa',
+                  }}
                 >
-                  <h3>Food Pairing</h3>
-                  {
+                  <div>
+                    <span style={{
+                      fontWeight: 'bold',
+                      opacity: '0.5',
+                    }}
+                    >
+                      ABV
+                    </span>
+                    <p>
+                      {beer.beer_alcohol_volume}
+                      %
+                    </p>
+                  </div>
+                  <div>
+                    <span style={{
+                      fontWeight: 'bold',
+                      opacity: '0.5',
+                    }}
+                    >
+                      pH
+                    </span>
+                    <p>{beer.beer_ph}</p>
+                  </div>
+                  <div>
+                    <span style={{
+                      fontWeight: 'bold',
+                      opacity: '0.5',
+                    }}
+                    >
+                      First Brew
+                    </span>
+                    <p>{beer.beer_first_brewed}</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '0.5rem',
+                    paddingTop: '0',
+                    marginTop: '1rem',
+                    marginBottom: '-1rem',
+                    borderTop: '1px solid #fffafa',
+                  }}
+                  >
+                    <h3
+                      style={{
+                        margin: '0.5rem 0',
+                      }}
+                    >
+                      Food Pairing
+
+                    </h3>
+                    {
                 showMoreFood ? (
                   <AddIcon
                     onClick={handleShowMoreFood}
@@ -169,8 +187,8 @@ const SingleBeer = ({ beer }) => {
                   />
                 )
               }
-                </div>
-                {
+                  </div>
+                  {
               showMoreFood ? (
                 null
               ) : (
@@ -192,7 +210,6 @@ const SingleBeer = ({ beer }) => {
                     key={uuidv4()}
                   >
                     {food}
-
                   </li>
                 ))
               }
@@ -200,21 +217,28 @@ const SingleBeer = ({ beer }) => {
                 </div>
               )
             }
-              </div>
-              <div>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: '0.5rem',
-                    paddingTop: '0',
-                    marginTop: '0.5rem',
-                    borderTop: '1px solid #fffafa',
-                  }}
-                >
-                  <h3>Brewers Tips</h3>
-                  {
+                </div>
+                <div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '0.5rem',
+                      paddingTop: '0',
+                      marginTop: '0.5rem',
+                      borderTop: '1px solid #fffafa',
+                    }}
+                  >
+                    <h3
+                      style={{
+                        margin: '0.5rem 0',
+                      }}
+                    >
+                      Brewers Tips
+
+                    </h3>
+                    {
                 showMoreTip ? (
                   <AddIcon
                     onClick={handleShowMoreTip}
@@ -227,8 +251,8 @@ const SingleBeer = ({ beer }) => {
                   />
                 )
               }
-                </div>
-                {
+                  </div>
+                  {
               showMoreTip ? (
                 null
               ) : (
@@ -259,12 +283,13 @@ const SingleBeer = ({ beer }) => {
                 </div>
               )
             }
+                </div>
               </div>
             </div>
-          </div>
 
-        </Grid>
-      </Paper>
+          </Grid>
+        </Paper>
+      </div>
     );
   }
 
@@ -272,6 +297,7 @@ const SingleBeer = ({ beer }) => {
     <button
       type="button"
       onClick={handleClick}
+      data-testid={beer.beer_id}
       style={{
         border: 'none',
         backgroundColor: 'transparent',
@@ -286,25 +312,25 @@ const SingleBeer = ({ beer }) => {
             borderRadius: '10px',
             display: 'inline',
             fontWeight: 'light',
-            mx: 0.5,
-            fontSize: 14,
+            // mx: 0.5,
+            // fontSize: 14,
+            marginTop: 0,
           },
           {
             '&:hover': {
               fontWeight: 'bold',
-              fontSize: 15,
             },
           },
           ]
 }
       >
         <Grid
-          className="grid"
+          className="grid-beer"
           justifyContent="center"
           alignItems="center"
           item
           padding={1}
-          paddingTop={0}
+          // paddingTop={0}
         >
           <div
             style={{

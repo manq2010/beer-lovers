@@ -24,6 +24,7 @@ const ScrollToTop = () => {
 
   return (
     <div
+      className="test-container"
       style={{
         display: visible ? 'inline' : 'none',
         position: 'fixed',
@@ -34,6 +35,7 @@ const ScrollToTop = () => {
       }}
     >
       <button
+        data-testid="scroll"
         className="btn-scroll"
         style={{
           outline: 'none',

@@ -3,12 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import SearchIcon from '@mui/icons-material/Search';
-import MicIcon from '@mui/icons-material/Mic';
-import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
-import Brightness2Icon from '@mui/icons-material/Brightness2';
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
-import SettingsIcon from '@mui/icons-material/Settings';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
 import { ThemeContext } from '../../contexts/theme';
@@ -36,6 +33,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/"
+            data-testid={shortName(headerData.title)}
             style={{
               textDecoration: 'none',
               color: '#fff',
@@ -44,20 +42,48 @@ const Navbar = () => {
               dispatch(toggleShowSearchInput(true));
             }}
           >
+            {
+          showSearchInput ? (
             <h1
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '0.5rem',
+                margin: '1rem 0 0 1rem',
               }}
             >
-              <SportsBarIcon />
+              <SportsBarIcon style={{
+                fontSize: '2.5rem',
+              }}
+              />
               <span className="logo">
                 {shortName(headerData.title)}
               </span>
             </h1>
+          ) : (
+            <button
+              style={{
+                outline: 'none',
+                backgroundColor: 'transparent',
+                border: 'none',
+                margin: '1rem 0 0 1rem',
+              }}
+              type="button"
+              onClick={() => {
+                dispatch(toggleShowSearchInput(true));
+              }}
+            >
+              <ChevronLeftIcon style={{
+                fontSize: '2.5rem',
+                color: '#fff',
+              }}
+              />
+            </button>
+          )
+        }
           </NavLink>
+
         </li>
         <div style={{
           display: 'flex',
@@ -76,12 +102,12 @@ const Navbar = () => {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    marginRight: '2rem',
+                    margin: '1rem 0.5rem 0 0',
                     color: '#fff',
                     backgroundColor: 'transparent',
                     borderRadius: '5px',
                     gap: '0.5rem',
-                    paddingRight: '1rem',
+                    paddingRight: '0.5rem',
                     cursor: 'pointer',
                   }}
                   onClick={() => {
@@ -102,27 +128,40 @@ const Navbar = () => {
             null
           )
         }
-          <li
-            className="icons"
-            style={{
-              marginRight: '1rem',
-              marginLeft: '-2.5rem',
-            }}
-          >
-            <MicIcon style={{ marginRight: '0.5rem' }} />
-            <PowerSettingsNewIcon style={{ marginRight: '0.5rem' }} />
-            <SettingsIcon style={{ marginRight: '0.5rem' }} />
-            <MoreVertIcon style={{ marginRight: '0.5rem' }} />
+          <li>
+            <button
+              style={{
+                outline: 'none',
+                backgroundColor: 'transparent',
+                border: 'none',
+                margin: '1rem 1rem 0 0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              type="button"
+              onClick={toggleTheme}
+              aria-label="toggle theme"
+            >
+              {themeName === 'pink' ? (
+                <ToggleOffIcon
+                  className="theme-btn"
+                  style={{
+                    fontSize: '2.7rem',
+                  }}
+                />
+              ) : (
+                <ToggleOnIcon
+                  className="theme-btn"
+                  style={{
+                    fontSize: '2.7rem',
+                  }}
+                />
+              )}
+            </button>
           </li>
         </div>
       </ul>
-      <button
-        type="button"
-        onClick={toggleTheme}
-        aria-label="toggle theme"
-      >
-        {themeName === 'pink' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
 
     </nav>
   );
