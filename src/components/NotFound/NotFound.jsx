@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const NotFoundContainer = styled.div`
   display: flex;
-  margin-top: 10rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 `;
 const NotFound = () => (
   <NotFoundContainer>

@@ -9,6 +9,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { toggleShowSearchInput } from '../../redux/BeerSlice/beerSlice';
 import headerData from '../../data/headerData';
 import { ThemeContext } from '../../contexts/theme';
+import shortName from '../../utils/shortName';
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
@@ -16,12 +17,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const { showSearchInput } = useSelector((state) => state.beerReducer);
 
-  const shortName = (name) => {
-    if (name.length > 12) {
-      return name.split(' ')[0];
-    }
-    return name;
-  };
   return (
     <nav>
       <ul style={{
@@ -33,7 +28,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/"
-            data-testid={shortName(headerData.title)}
+            data-testid={shortName(headerData.title, 12)}
             style={{
               textDecoration: 'none',
               color: '#fff',
@@ -58,7 +53,7 @@ const Navbar = () => {
               }}
               />
               <span className="logo">
-                {shortName(headerData.title)}
+                {shortName(headerData.title, 12)}
               </span>
             </h1>
           ) : (

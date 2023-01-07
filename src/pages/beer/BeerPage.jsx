@@ -6,6 +6,7 @@ import SingleBeer from '../../components/Beers/SingleBeer/SingleBeer';
 import Contact from '../../components/Contact/Contact';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
+import shortName from '../../utils/shortName';
 
 const BeerPage = () => {
   const location = useLocation();
@@ -18,11 +19,17 @@ const BeerPage = () => {
     <>
       <Helmet>
         <title>
-          {headerData.name}
+          {stateData.beer.beer_name}
+          {' '}
+          Beer
           {' '}
           |
           {' '}
-          Beer
+          {shortName(headerData.name, 10)}
+          {' '}
+          |
+          {' '}
+          Beer Lovers App
         </title>
         <meta name="description" content="Beer lovers application" />
       </Helmet>
