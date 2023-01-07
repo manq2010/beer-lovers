@@ -9,7 +9,9 @@ const NotFoundPage = () => (
       <title>
         {headerData.name}
         {' '}
-        | NotFound
+        |
+        {' '}
+        NotFound
       </title>
     </Helmet>
     <NotFound />

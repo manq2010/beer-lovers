@@ -19,6 +19,9 @@ const BeerPage = () => {
       <Helmet>
         <title>
           {headerData.name}
+          {' '}
+          |
+          {' '}
           Beer
         </title>
         <meta name="description" content="Beer lovers application" />
