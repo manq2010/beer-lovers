@@ -106,26 +106,6 @@ a:hover {
   align-items: center;
 }
 
-@media (min-width: 600px) {
-  .icons {
-    display: none;
-  }
-
-  .test {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .logo {
-    display: none;
-  }
-
-  .search-button {
-    border: none !important;
-  }
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -139,4 +119,58 @@ button:nth-child(4n-3) {
 button:nth-child(4n-1),
 button:nth-child(4n-2) {
   background-color: var(--theme-grid-light);
+}
+
+@media (min-width: 600px) {
+  .icons {
+    display: none;
+  }
+
+  .test {
+    display: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  button:nth-child(2n) {
+    background-color: var(--theme-grid);
+  }
+
+  button:nth-child(2n+1) {
+    background-color: var(--theme-grid-light);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+
+  .search-button {
+    border: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  button:nth-child(8n-7),
+  button:nth-child(8n-2),
+  button:nth-child(8n-5),
+  button:nth-child(8n) {
+    background-color: var(--theme-grid);
+  }
+
+  button:nth-child(8n-3),
+  button:nth-child(8n-6),
+  button:nth-child(8n-1),
+  button:nth-child(8n-4) {
+    background-color: var(--theme-grid-light);
+  }
 }

@@ -1,4 +1,4 @@
-.grid {
+.grid-item {
   color: var(--color);
   background-color: var(--card-bg);
   height: 100%;
@@ -25,4 +25,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 600px) {
+  .grid-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

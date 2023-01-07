@@ -57,12 +57,12 @@ const SingleBeer = ({ beer }) => {
           }}
         >
           <Grid
-            className="grid grid-shadow"
+            className="grid-item grid-shadow"
             justifyContent="center"
             alignItems="center"
             item
-            padding={2}
-            gap={2}
+            padding={5}
+            gap={4}
           >
             <div
               style={{
